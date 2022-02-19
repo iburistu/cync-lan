@@ -1,6 +1,6 @@
 # cync-lan
 
-Proof-of-concept LAN controller for CYNC 120V smart plug devices.
+Proof-of-concept LAN controller for CYNC devices.
 
 ## Prerequisites:
 
@@ -52,6 +52,12 @@ To turn the device off, you can set `status` to
 - "0"
 - "off"
 
+Other body options include:
+
+- brightness: set in between `0`-`100`
+- temperature: for non-RGB bulbs with color options you can set the color temp from `0` (candlelight) to `100` (sunlight)
+- color: for RGB bulbs you can set the R, G, B, and saturation (S) from `0`-`255`. `0` saturation is most saturated, and `255` is pure white (confusing, but it's how they set it up!)
+
 ## Debugging:
 
 If the commands do not seem to be working, it's likely that the TCP communication on your device is different than mine. You can inspect the traffic of the device communicating with the `cm-ge.xlink.cn` server in real-time by running:
@@ -69,3 +75,5 @@ dig cm-ge.xlink.cn
 ```
 
 You should see an A record for your local network. If not, your DNS is not set up correctly.
+
+Additionally, the devices make the DNS query on startup - you need to cycle power for all devices on the network for them to use your local server.
