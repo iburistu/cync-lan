@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "/bin/bash bootstrap.sh",
-    "start": "node index.js"
+    "start": "node index.js",
+    "watch": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fastify": "^3.27.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
