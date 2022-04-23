@@ -16,7 +16,7 @@ COPY package.json package.json
 COPY package-lock.json package-lock.json
 COPY index.js index.js
 
-RUN npm ci
+RUN npm ci --production
 
 EXPOSE 8080/tcp
 EXPOSE 23779/tcp
